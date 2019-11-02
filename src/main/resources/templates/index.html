@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/home.min.css">
+    <style>
+        body{
+            background: url("../static/images/bg.png");
+        }
+
+        .m-text{
+            font-weight: 300 !important;
+            letter-spacing: 1px !important;
+            line-height: 1.5 !important;
+            font-family: 宋体;
+        }
+
+        .m-black{
+            color: #333 !important;
+        }
+    </style>
+</head>
+<body>
+<!-- 首页 -->
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted segment stacked m-padding-smaller">
+        <div class="ui container">
+            <div class="ui inverted secondary stacked menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="item"><i class="mini home icon"></i> 首页</a>
+                <a href="#" class="item"><i class="mini idea icon"></i> 分类</a>
+                <a href="#" class="item"><i class="mini tag icon"></i> 标签</a>
+                <a href="#" class="item"><i class="mini clone icon"></i> 归档</a>
+                <a href="#" class="item"><i class="mini info icon"></i> 关于我</a>
+                <div class="right item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- 首页 -->
+
+<!--    中间部分-->
+    <div class="m-padding-big m-container">
+        <div class="ui container">
+            <div class="ui grid">
+                <!-- 左边的博客 -->
+                <div class="eleven wide column">
+                    <!-- header -->
+                    <div class="ui top attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <h3 class="ui teal header">博客</h3>
+                            </div>
+                            <div class="right aligned column">
+                                共 <h2 class="ui orange header m-text-thin" style="display: inline-block"> 14 </h2> 篇
+                            </div>
+                        </div>
+                    </div>
+                    <!-- header -->
+                    <!-- content -->
+                    <div class="ui attached segment">
+                        <div class="ui m-padding vertical segment m-padding-big">
+                            <div class="ui stacked mobile reversed grid">
+                                <!-- 左边正文 -->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">标题</h3>
+                                    <p class="m-text">这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这
+                                        是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文</p>
+                                    <!-- 底层图标 -->
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="../static/images/green.jpg" alt="" class="ui avatar image m-size-icon-small">
+                                                    <div class="content">
+                                                        <a class="header teal">刘军民</a>
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="calendar icon"></i> 2019-10-15
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="eye icon"></i> 204
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认证升级</a>
+                                        </div>
+                                    </div>
+                                    <!-- 底层图片 -->
+                                </div>
+                                <!-- 左边正文 -->
+                                <!-- 右边图片 -->
+                                <div class="ui five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="../static/images/green.jpg" alt="" class="ui rounded image m-size-icon-large">
+                                    </a>
+                                </div>
+                                <!-- 右边图片 -->
+                            </div>
+                        </div>
+                        <div class="ui m-padding vertical segment m-padding-big">
+                            <div class="ui grid">
+                                <!-- 左边正文 -->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">标题</h3>
+                                    <p class="m-text">这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这
+                                        是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文</p>
+                                    <!-- 底层图标 -->
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="../static/images/green.jpg" alt="" class="ui avatar image m-size-icon-small">
+                                                    <div class="content">
+                                                        <a class="header teal">刘军民</a>
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="calendar icon"></i> 2019-10-15
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="eye icon"></i> 204
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认证升级</a>
+                                        </div>
+                                    </div>
+                                    <!-- 底层图片 -->
+                                </div>
+                                <!-- 左边正文 -->
+                                <!-- 右边图片 -->
+                                <div class="ui five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="../static/images/green.jpg" alt="" class="ui rounded image m-size-icon-large">
+                                    </a>
+                                </div>
+                                <!-- 右边图片 -->
+                            </div>
+                        </div>
+                        <div class="ui m-padding vertical segment m-padding-big">
+                            <div class="ui grid">
+                                <!-- 左边正文 -->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">标题</h3>
+                                    <p class="m-text">这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这
+                                        是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文</p>
+                                    <!-- 底层图标 -->
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="../static/images/green.jpg" alt="" class="ui avatar image m-size-icon-small">
+                                                    <div class="content">
+                                                        <a class="header teal">刘军民</a>
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="calendar icon"></i> 2019-10-15
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="eye icon"></i> 204
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认证升级</a>
+                                        </div>
+                                    </div>
+                                    <!-- 底层图片 -->
+                                </div>
+                                <!-- 左边正文 -->
+                                <!-- 右边图片 -->
+                                <div class="ui five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="../static/images/green.jpg" alt="" class="ui rounded image m-size-icon-large">
+                                    </a>
+                                </div>
+                                <!-- 右边图片 -->
+                            </div>
+                        </div>
+                        <div class="ui m-padding vertical segment m-padding-big">
+                            <div class="ui grid">
+                                <!-- 左边正文 -->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">标题</h3>
+                                    <p class="m-text">这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这
+                                        是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文这是正文</p>
+                                    <!-- 底层图标 -->
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="../static/images/green.jpg" alt="" class="ui avatar image m-size-icon-small">
+                                                    <div class="content">
+                                                        <a class="header teal">刘军民</a>
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="calendar icon"></i> 2019-10-15
+                                                    </div>
+                                                    <div class="item m-padding-left-small" style="display: inline-block">
+                                                        <i class="eye icon"></i> 204
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认证升级</a>
+                                        </div>
+                                    </div>
+                                    <!-- 底层图片 -->
+                                </div>
+                                <!-- 左边正文 -->
+                                <!-- 右边图片 -->
+                                <div class="ui five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="../static/images/green.jpg" alt="" class="ui rounded image m-size-icon-large">
+                                    </a>
+                                </div>
+                                <!-- 右边图片 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <!-- foot -->
+                    <div class="ui bottom attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a href="#" class="ui mini teal basic button">上一页</a>
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" class="ui mini teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- foot -->
+                </div>
+                <!-- 左边的博客 -->
+
+                <!-- 右边的top -->
+                <div class="five wide column">
+                    <!-- 分类 -->
+                    <div class="ui vertical segment m-padding-big">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="idea icon"></i>分类
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" target="_blank">more<i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                            <div class="ui teal vertical segment">
+                                <div class="ui fluid vertical menu small">
+                                    <a href="#" class="item m-text-thin">
+                                        学习日志
+                                        <div class="ui teal basic left pointing label">13</div>
+                                    </a>
+                                    <a href="#" class="item m-text-thin">
+                                        学习日志
+                                        <div class="ui teal basic left pointing label">13</div>
+                                    </a>
+                                    <a href="#" class="item m-text-thin">
+                                        学习日志
+                                        <div class="ui teal basic left pointing label">13</div>
+                                    </a>
+                                    <a href="#" class="item m-text-thin">
+                                        学习日志
+                                        <div class="ui teal basic left pointing label">13</div>
+                                    </a>
+                                    <a href="#" class="item m-text-thin">
+                                        学习日志
+                                        <div class="ui teal basic left pointing label">13</div>
+                                    </a>
+                                    <a href="#" class="item m-text-thin">
+                                        学习日志
+                                        <div class="ui teal basic left pointing label">13</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 标签 -->
+                    <div class="ui vertical segment m-padding-big">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="tag icon"></i>标签
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" target="_blank">more<i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                            <div class="ui teal segment small">
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    计算机网络 <div class="detail">13</div>
+                                </a>
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    java <div class="detail">13</div>
+                                </a>
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    计算机网络 <div class="detail">13</div>
+                                </a>
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    python <div class="detail">13</div>
+                                </a>
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    计算机网络 <div class="detail">13</div>
+                                </a>
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    c++ <div class="detail">13</div>
+                                </a>
+                                <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    计算机网络 <div class="detail">13</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 最新推荐 -->
+                    <div class="ui vertical segment m-padding-big">
+                        <div class="ui secondary segment">
+                            <i class="bookmark icon"></i> 最新推荐
+                            <div class="ui attached segment small" style="margin-top: 1em">
+                                <a href="#" target="_blank" class="m-black m-text-thin">java从入门到放弃</a>
+                            </div>
+                            <div class="ui attached segment small">
+                                <a href="#" target="_blank" class="m-black m-text-thin">java从入门到放弃</a>
+                            </div>
+                            <div class="ui attached segment small">
+                                <a href="#" target="_blank" class="m-black m-text-thin">java从入门到放弃</a>
+                            </div>
+                            <div class="ui attached segment small">
+                                <a href="#" target="_blank" class="m-black m-text-thin">java从入门到放弃</a>
+                            </div>
+                            <div class="ui attached segment small">
+                                <a href="#" target="_blank" class="m-black m-text-thin">java从入门到放弃</a>
+                            </div>
+                            <div class="ui attached segment small">
+                                <a href="#" target="_blank" class="m-black m-text-thin">java从入门到放弃</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 二维码 -->
+                    <h4 class="ui horizontal divider header m-padding-big">扫码关注我</h4>
+                    <div class="ui card">
+                        <img src="../static/images/WeChat.png" alt="" class="ui rounded image centered" style="width: 12em">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 中间部分 -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<!--    底部-->
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padding-large">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided grid">
+                <div class="three wide column">
+                    <div class="item">
+                        <img src="../static/images/WeChat.png" class="ui rounded image" alt="" style="width: 100px">
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">最新项目</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">最新项目</a>
+                        <a href="#" class="item">最新项目</a>
+                        <a href="#" class="item">最新项目</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email:1792619448@qq.com</a>
+                        <a href="#" class="item">QQ:1792619448</a>
+                        <a href="https://github.com/liujunminx" class="item">GitHub-></a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">关于博客</h4>
+                    <div class="ui inverted link list">
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，分享自己学习历程中的笔记，项目，感想，希望能和大家交流学习</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted divider section"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright © 2019 Lemon Designed by Liu JunMin</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+</html>

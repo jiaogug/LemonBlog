@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/home.min.css">
+    <style>
+        body{
+            background: url("../static/images/bg.png");
+        }
+
+        .m-text{
+            font-weight: 300 !important;
+            letter-spacing: 1px !important;
+            line-height: 1.5 !important;
+            font-family: 宋体;
+        }
+
+         .m-black{
+            color: #333 !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".payButton").popup({
+                popup: $('.payQR.popup'),
+                on: 'click',
+                position: 'bottom center'
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 首页 -->
+    <nav class="ui inverted segment stacked m-padding-smaller">
+        <div class="ui container">
+            <div class="ui inverted secondary stacked menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="item"><i class="mini home icon"></i> 首页</a>
+                <a href="#" class="item"><i class="mini idea icon"></i> 分类</a>
+                <a href="#" class="item"><i class="mini tag icon"></i> 标签</a>
+                <a href="#" class="item"><i class="mini clone icon"></i> 归档</a>
+                <a href="#" class="item"><i class="mini info icon"></i> 关于我</a>
+                <div class="right item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 首页 -->
+
+    <!--    中间部分-->
+    <div class="m-padding-big m-container-small">
+        <div class="ui container">
+            <!-- 头部 -->
+            <div class="ui top attached segment">
+                <div class="ui horizontal link list">
+                    <div class="item">
+                        <img src="../static/images/green.jpg" alt="" class="ui avatar image m-size-icon-small">
+                        <div class="content">
+                            <a class="header teal">刘军民</a>
+                        </div>
+                        <div class="item m-padding-left-small" style="display: inline-block">
+                            <i class="calendar icon"></i> 2019-10-15
+                        </div>
+                        <div class="item m-padding-left-small" style="display: inline-block">
+                            <i class="eye icon"></i> 204
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 图片 -->
+            <div class="ui attached segment">
+                <img src="../static/images/header.jpg" alt="" class="ui fluid rounded image">
+            </div>
+            <!-- 正文 -->
+            <div class="ui attached segment">
+                <div class="ui right aligned basic segment">
+                    <div class="ui orange basic label">原创</div>
+                </div>
+                <h2 class="ui header center aligned">原创博文</h2>
+                <div id="content">
+                    <h3 id="开发准备">1 开发准备</h3>
+                    <p>开发准备包括项目创建、JAR 包的导入、第三方插件的下载、页面所需图片下载以及和创建数据库。</p>
+                    <ul>
+                        <li><strong>项目创建</strong></li>
+                        <li><strong>Jar 包导入</strong></li>
+                        <li><strong>MarkDown 编辑器</strong>:该项目需要使用 markdown 文档编辑来实现写博客和日记的功能。我们选择的是开源的 markdown 编辑器 Editor.md。</li>
+                        <li><strong>图片下载</strong>:开发网站肯定是需要用到图片的，该项目页面上使用的图片有两张，包括 logo 和在主页上使用的另一张图片。</li>
+                        <li><strong>创建数据库</strong>:需要创建博客和日记等数据表；</li>
+                        <li><strong>实体类</strong>:实体类对应数据库的表，所有实体类在 com.personalblog.model 包下。</li>
+                    </ul>
+                    <p>以上，我们的开发准备工作就完成了。</p>
+                    <h3 id="前端页面">2 前端页面</h3>
+                    <p>该项目的前端页面是使用 jsp 编写的。另外，还有一些简单的 css 样式和 js。</p>
+                    <p>前端需要编写的页面还是比较多的，一个个写就ok了；</p>
+                    <h3 id="博客相关功能的实现">3 博客相关功能的实现</h3>
+                    <p>博客相关功能包括：存储博客的内容信息、查找博客、根据id查找博客、删除博客。</p>
+                    <p>写博客相关功能的后台 Java 代码；</p>
+                    <h3 id="日记相关功能的实现">4 日记相关功能的实现</h3>
+                    <p>日记 diary 的相关功能包括写日记、显示日记和管理日记。</p>
+                    <p>以上就是我们的逻辑处理过程需要写的代码。</p>
+                    <h3 id="xml-文件的配置">5 xml 文件的配置</h3>
+                    <ul>
+                        <li><strong>web.xml</strong>：web.xml 文件中我们需要配置的东西是 SSM 框架的相关配置，包括监听器、核心加载类等等；</li>
+                        <li><strong>applicationContext.xml</strong>：applicationContext.xml 是 spring 的核心配置文件，它整合了 Spring mvc 和 mybatis ，并配置了数据库的持久化。</li>
+                        <li><strong>mybatis-config.xml</strong>：mybatis-config.xml 是加载 mapper 层的接口和 xml 文件；</li>
+                        <li><strong>spring-mvc.xml</strong>：spring-mvc.xml 配置的是配置方案和视图解析器、自动扫描并加载成 bean 等；</li>
+                    </ul>
+                </div>
+                <!-- 标签 -->
+                <div style="padding-left: 1em; margin-top: 2em">
+                    <div class="ui basic teal left pointing label">SpringBoot</div>
+                </div>
+                <!-- 赞赏 -->
+                <div class="ui center aligned basic segment">
+                    <button class="ui payButton orange basic circular button">赞赏</button>
+                </div>
+                <div class="ui payQR flowing popup transition hidden">
+                    <div class="ui orange basic label">
+                        <div class="ui images" style="font-size: inherit !important;">
+                            <div class="image">
+                                <img src="../static/images/AliPay.jpg" alt="" class="ui rounded bordered image" style="width: 120px">
+                                <div>支付宝</div>
+                            </div>
+                            <div class="image">
+                                <img src="../static/images/WeChatPay.png" alt="" class="ui rounded bordered image" style="width: 120px">
+                                <div>微信</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 博客信息 -->
+            <div class="ui attached positive message">
+                <div class="ui grid">
+                    <div class="eleven wide column">
+                        <ui class="list">
+                            <li>作者：刘军民（联系作者）</li>
+                            <li>发表时间：2019-10-15</li>
+                            <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
+                            <li>公众号转载：请在文本添加作者公众号二维码</li>
+                        </ui>
+                    </div>
+                    <div class="five wide column">
+                        <img src="../static/images/WeChat.png" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <!-- 留言区域 -->
+            <div class="ui attached segment">
+            <!--留言区域列表-->
+                <div class="ui teal segment">
+                    <div class="ui threaded comments">
+                        <h3 class="ui dividing header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">评论</font></font></h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="../static/images/green.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">马特</font></font></a>
+                                <div class="metadata">
+                                    <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">今天下午5:42</font></font></span>
+                                </div>
+                                <div class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                    多么艺术！
+                                </font></font></div>
+                                <div class="actions">
+                                    <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="../static/images/green.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">傅lio</font></font></a>
+                                <div class="metadata">
+                                    <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">昨天上午12:30</font></font></span>
+                                </div>
+                                <div class="text">
+                                    <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这对我的研究非常有用。</font><font style="vertical-align: inherit;">也谢谢！</font></font></p>
+                                </div>
+                                <div class="actions">
+                                    <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                                </div>
+                            </div>
+                            <div class="comments">
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <img src="../static/images/green.jpg">
+                                    </a>
+                                    <div class="content">
+                                        <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">珍妮·赫斯（Jenny Hess）</font></font></a>
+                                        <div class="metadata">
+                                            <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现在</font></font></span>
+                                        </div>
+                                        <div class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                            艾略特，你总是很正确:)
+                                        </font></font></div>
+                                        <div class="actions">
+                                            <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="../static/images/green.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">乔·亨德森</font></font></a>
+                                <div class="metadata">
+                                    <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5天前</font></font></span>
+                                </div>
+                                <div class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                    杜德，太棒了 </font><font style="vertical-align: inherit;">非常感谢
+                                </font></font></div>
+                                <div class="actions">
+                                    <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui form">
+                    <div class="field">
+                        <textarea name="content" id="" cols="30" rows="10" placeholder="请输入评论内容"></textarea>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickname" type="text" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="text" name="nickname" type="text" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <div class="field">
+                           <button class="ui teal button"><i class="edit icon"></i>发布</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 中间部分 -->
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--    底部-->
+    <footer class="ui inverted vertical segment m-padding-large">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided grid">
+                <div class="three wide column">
+                    <div class="item">
+                        <img src="../static/images/WeChat.png" class="ui rounded image" alt="" style="width: 100px">
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">最新项目</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">最新项目</a>
+                        <a href="#" class="item">最新项目</a>
+                        <a href="#" class="item">最新项目</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email:1792619448@qq.com</a>
+                        <a href="#" class="item">QQ:1792619448</a>
+                        <a href="https://github.com/liujunminx" class="item">GitHub-></a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">关于博客</h4>
+                    <div class="ui inverted link list">
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，分享自己学习历程中的笔记，项目，感想，希望能和大家交流学习</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted divider section"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright © 2019 Lemon Designed by Liu JunMin</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+.m-padding-smaller{
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+.m-padding-tiny{
+    padding: 0.3em !important;
+}
+.m-padding{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+.m-padding-big{
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.m-padding-large{
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+.m-padding-left-small{
+    padding-left: 0.4em;
+}
+.m-padding-big{
+    padding-top: 2.5em !important;
+    padding-bottom: 2.5em !important;
+}
+
+/*------margin-----*/
+.m-margin-tiny{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+/*-----text------*/
+.m-text{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.0 !important;
+}
+.m-text-thin{
+    font-weight: 300 !important;
+}
+.m-text-spaced{
+    letter-spacing: 1px !important;
+}
+.m-text-lined{
+    line-height: 1.0 !important;
+}
+
+/*--------opacity-------*/
+.m-opacity-mini{
+    opacity: 0.8 !important;
+}
+
+/*-----size-------*/
+.m-size-icon-small{
+    width: 30pxx;
+    height: 30px;
+}
+.m-size-icon-large{
+    width: 200px;
+    height: 150px;
+}
+
+/*---------container--------*/
+.m-container{
+    max-width: 72em !important;
+    margin: auto !important;
+}
+.m-container-small{
+    max-width: 60em !important;
+    margin: auto !important;
+}
+
+/*-----color------*/
+.m-black{
+    color: #333 !important;
+}

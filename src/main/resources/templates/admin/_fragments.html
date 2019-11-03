@@ -3,10 +3,10 @@
 <head th:fragment="head(title)">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客发布</title>
+    <title th:replace="${title}">博客发布</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../../static/css/home.min.css">
-    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css">
+    <link rel="stylesheet" href="../../static/css/home.min.css" th:href="@{/static/css/home.min.css}">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css" th:href="@{/static/lib/editormd/css/editormd.css}">
     <style>
         body{
             background: url("../../static/images/bg.png");
@@ -29,7 +29,7 @@
         <div class="ui container">
             <div class="ui inverted secondary stacked menu">
                 <h2 class="ui teal header item">管理后台</h2>
-                <a href="#" class="item" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i> 博客</a>
+                <a th:href="@{/admin/blogs}" class="item" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i> 博客</a>
                 <a th:href="@{/admin/types}" class="item" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i> 分类</a>
                 <a th:href="@{/admin/tags}" class="item" th:classappend="${n==3} ? 'active'"><i class="mini tag icon"></i> 标签</a>
                 <div class="right menu">

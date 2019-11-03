@@ -26,6 +26,17 @@ public class Blog {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
+    @Transient
+    private String tagIds;
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
+    }
+
     @ManyToOne
     private Type type;
 
@@ -77,12 +88,8 @@ public class Blog {
     public Blog() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -179,6 +186,29 @@ public class Blog {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public void init(){
+        this.tagIds = tagsToIds(this.getTags());
+    }
+
+    //1, 2, 3
+    private String tagsToIds(List<Tag> tags){
+        if (!tags.isEmpty()){
+            StringBuffer ids = new StringBuffer();
+            boolean flag = false;
+            for(Tag tag : tags){
+                if (flag){
+                    ids.append(",");
+                }else{
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        }else {
+            return tagIds;
+        }
     }
 
     @Override

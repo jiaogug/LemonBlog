@@ -11,6 +11,8 @@ public interface TagService {
     Tag saveTag(Tag tag);
     Tag getTag(Long id);
     Page<Tag> listTag(Pageable pageable);
+    List<Tag> listTag();
+    List<Tag> listTag(String ids);
     Tag updateTag(Long id, Tag tag) throws NotFoundException;
     void deleteTag(Long id);
 }

@@ -12,6 +12,7 @@ public interface TypeService {
     Type getType(Long id);
     Page<Type> listType(Pageable pageable);
     List<Type> listType();
+    List<Type> listTypeTop(Integer size);
     Type updateType(Long id, Type type) throws NotFoundException;
     void deleteType(Long id);
 }

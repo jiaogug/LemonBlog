@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments::head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>归档</title>
@@ -30,7 +30,7 @@
 </head>
 <body>
     <!-- 首页 -->
-    <nav class="ui inverted segment stacked m-padding-smaller">
+    <nav th:replace="_fragments :: menu(4)" class="ui inverted segment stacked m-padding-smaller">
         <div class="ui container">
             <div class="ui inverted secondary stacked menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -197,7 +197,7 @@
     <br>
 
     <!--    底部-->
-    <footer class="ui inverted vertical segment m-padding-large">
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padding-large">
         <div class="ui center aligned container">
             <div class="ui inverted divided grid">
                 <div class="three wide column">

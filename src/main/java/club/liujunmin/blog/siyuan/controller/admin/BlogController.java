@@ -6,6 +6,7 @@ import club.liujunmin.blog.siyuan.entity.User;
 import club.liujunmin.blog.siyuan.service.BlogService;
 import club.liujunmin.blog.siyuan.service.TagService;
 import club.liujunmin.blog.siyuan.service.TypeService;
+import javassist.NotFoundException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -67,11 +68,17 @@ public class BlogController {
     }
 
     @PostMapping("/blogs")
-    public String post(Blog blog, HttpSession session, RedirectAttributes attributes){
+    public String post(Blog blog, HttpSession session, RedirectAttributes attributes) throws NotFoundException {
         blog.setUser((User) session.getAttribute("user"));
         blog.setType(typeService.getType(blog.getType().getId()));
         blog.setTags(tagService.listTag(blog.getTagIds()));
-        Blog b = blogService.saveBlog(blog);
+        Blog b;
+        //防止其他属性初始化
+        if (blog.getId() == null) {
+            b =  blogService.saveBlog(blog);
+        } else {
+            b = blogService.updateBlog(blog.getId(), blog);
+        }
         if (b == null){
             attributes.addFlashAttribute("message", "操作失败");
         }else{
@@ -84,6 +91,6 @@ public class BlogController {
     public String delete(@PathVariable Long id, RedirectAttributes attributes){
         blogService.deleteBlog(id);
         attributes.addFlashAttribute("message", "删除成功");
-        return "admin/blogs";
+        return "redirect:/admin/blogs";
     }
 }

@@ -1,0 +1,23 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  resources:
+    static-locations: classpath:/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/siyuan?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: ljm4615hj1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: info
+    club.liujunmin.blog.siyuan: debug
+  file:
+    name: log/blog.log
+server:
+  port: 80

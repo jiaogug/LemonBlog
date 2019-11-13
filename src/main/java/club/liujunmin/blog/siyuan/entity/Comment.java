@@ -17,6 +17,7 @@ public class Comment {
     private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
+    private boolean adminComment;
 
     @ManyToOne
     private Blog blog;
@@ -44,6 +45,14 @@ public class Comment {
     }
 
     public Comment() {
+    }
+
+    public boolean isAdminComment() {
+        return adminComment;
+    }
+
+    public void setAdminComment(boolean adminComment) {
+        this.adminComment = adminComment;
     }
 
     public Blog getBlog() {

@@ -20,6 +20,7 @@ public interface BlogService {
 
     Page<Blog> listBlog(Pageable pageable, BlogQuery blog);
     Page<Blog> listBlog(Pageable pageable);
+    Page<Blog> listBlog(Long tagId, Pageable pageable);
     Page<Blog> listBlog(Pageable pageable, String query);
     List<Blog> listRecommendBlogTop(Integer size);
     Blog saveBlog(Blog blog);

@@ -3,7 +3,7 @@
 <head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分类</title>
+    <title>标签</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="stylesheet" href="../static/css/home.min.css">
     <style>
@@ -30,7 +30,7 @@
 </head>
 <body>
     <!-- 首页 -->
-    <nav th:replace="_fragments :: menu(2)" class="ui inverted segment stacked m-padding-smaller">
+    <nav th:replace="_fragments :: menu(3)" class="ui inverted segment stacked m-padding-smaller">
         <div class="ui container">
             <div class="ui inverted secondary stacked menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -56,18 +56,19 @@
             <div class="ui top attached segment">
                 <div class="ui middle aligned two column grid">
                     <div class="column">
-                        <h3 class="ui teal header">分类</h3>
+                        <h3 class="ui teal header">标签</h3>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui orange header m-text-thin" style="display: inline-block" th:text="${#arrays.length(types)}"> 14 </h2> 篇
+                        共 <h2 class="ui orange header m-text-thin" style="display: inline-block" th:text="${#arrays.length(tags)}"> 14 </h2> 篇
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ui segment attached m-padding-big">
-            <div class="ui labeled button m-margin-tiny" th:each="type: ${types}" style="margin-top: 0.3em; margin-bottom: 0.3em">
-                <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic button" th:classappend="${type.id == activeTypeId} ? 'teal'" th:text="${type.name}">java从入门到精通</a>
-                <div class="ui basic left pointing label" th:classappend="${type.id == activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">24</div>
+        <div class="ui teal segment attached massive">
+            <div class="ui labeled button m-margin-tiny" th:each="tag: ${tags}" style="margin-top: 0.3em; margin-bottom: 0.3em">
+                <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" class="ui basic left pointing label m-margin-tiny large" th:classappend="${tag.id == activeTagId} ? 'teal'" style="margin-top: 0.3em; margin-bottom: 0.3em">
+                    <span th:text="${tag.name}">计算机网络</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">13</div>
+                </a>
             </div>
         </div>
         <div class="ui attached segment">
@@ -79,24 +80,31 @@
                         <p class="m-text" th:text="${blog.description}"></p>
                         <!-- 底层图标 -->
                         <div class="ui grid">
-                            <div class="eleven wide column">
-                                <div class="ui mini horizontal link list">
-                                    <div class="item">
-                                        <img src="../static/images/green.jpg" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image m-size-icon-small">
-                                        <div class="content">
-                                            <a class="header teal" th:text="${blog.user.nickname}">刘军民</a>
-                                        </div>
-                                        <div class="item m-padding-left-small" style="display: inline-block">
-                                            <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span>
-                                        </div>
-                                        <div class="item m-padding-left-small" style="display: inline-block">
-                                            &ensp;<i class="eye icon"></i> <span th:text="${blog.views}"></span>
+                            <div class="row">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+                                        <div class="item">
+                                            <img src="../static/images/green.jpg" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image m-size-icon-small">
+                                            <div class="content">
+                                                <a class="header teal" th:text="${blog.user.nickname}">刘军民</a>
+                                            </div>
+                                            <div class="item m-padding-left-small" style="display: inline-block">
+                                                <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span>
+                                            </div>
+                                            <div class="item m-padding-left-small" style="display: inline-block">
+                                                &ensp;<i class="eye icon"></i> <span th:text="${blog.views}"></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="right aligned five wide column">
+                                    <a href="#" target="_blank" class="ui teal basic label" th:text="${blog.type.name}">认证升级</a>
+                                </div>
                             </div>
-                            <div class="right aligned five wide column">
-                                <a href="#" target="_blank" class="ui teal basic label" th:text="${blog.type.name}">认证升级</a>
+                            <div class="row">
+                                <div class="column">
+                                    <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" class="ui basic left pointing label m-padding-tiny m-text-thin" th:classappend="${tag.id == activeTagId} ? 'teal'" th:each="tag: ${blog.tags}" th:text="${tag.name}"></a>
+                                </div>
                             </div>
                         </div>
                         <!-- 底层图片 -->

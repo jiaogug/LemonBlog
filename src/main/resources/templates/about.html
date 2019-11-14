@@ -50,7 +50,7 @@
         <div class="ui container">
             <div class="ui grid">
                 <div class="eleven wide column">
-                    <img src="/images/green.jpg" th:src="@{/images/green.jpg}" alt="" class="ui rounded image" style="width: 800px; height: 500px">
+                    <img src="/images/planet.jpg" th:src="@{/images/planet.jpg}" alt="" class="ui rounded image" style="width: 800px; height: 500px">
                 </div>
                 <div class="five wide column">
                     <div class="ui top attached segment">
@@ -75,13 +75,13 @@
                         <div class="ui teal basic left pointing label m-margin-tiny" style="margin-top: 0.3em; margin-bottom: 0.3em">...</div>
                     </div>
                     <div class="ui attached bottom segment">
-                        <a href="#" class="ui circular icon button"><i class="github icon"></i></a>
+                        <a href="https://github.com/liujunminx" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>
                         <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
                         <a href="#" class="ui qq circular icon button" data-content="1792619448" data-position="bottom center"><i class="qq icon"></i></a>
                     </div>
 
                     <div class="ui wechat-qr flowing popup transition hidden">
-                        <img src="../static/images/WeChat.png" alt="" class="ui rounded image" style="width: 100px">
+                        <img th:src="@{/images/WeChat.png}" src="/images/WeChat.png" alt="" class="ui rounded image" style="width: 100px">
                     </div>
                 </div>
             </div>
@@ -134,9 +134,7 @@
             <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright © 2019 Lemon Designed by Liu JunMin</p>
         </div>
     </footer>
-
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<span th:replace="_fragments::script"> </span>
 <script>
     $(".qq").popup();
 
